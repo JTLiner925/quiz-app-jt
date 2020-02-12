@@ -7,9 +7,7 @@ body {
     margin-left: 30px;
     margin-right: 30px;
 }
-.pic-1, .pic-2 {
-    visibility: collapse;
-}
+
 header {
     background-color: gray;
     display: flex;
@@ -47,9 +45,7 @@ footer {
     margin-bottom: 0;
 }
  @media only screen and (min-width: 650px){
-    .pic-2, .pic-1 {
-        visibility: collapse;
-    }
+   
     form {
         margin: auto;
         flex-direction: column;
@@ -82,19 +78,5 @@ footer {
     }
 } 
 @media only screen and (min-width: 900px){
-main {
-    display: flex;
-    margin: 5px;
-    flex-direction: row;
-}
-form {
-    height: 100%;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-.pic-1, .pic-2 {
-    visibility: visible;
-    width: 30%;
-    border: 2pt solid black;
-}
+
 }
