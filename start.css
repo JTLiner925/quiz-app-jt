@@ -17,26 +17,16 @@ header {
 form {
     background-color: lightgray;
     display: flex;
-    flex-direction: column;
-    
-}
-
-#answer-1, #answer-2, #answer-3, #answer-4 {
-    display: inline;
-    margin-left: 50px;
+    flex-direction: column; 
+    text-align: center;
+    height: 150px;
 }
 h2 {
     display: flex;
     margin-left: 50px;
     flex-direction: column;
 }
-p, section{
-    margin-bottom: 10px;
-    background-color: gray; 
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-}
+
 footer {
     width: 100%;
     display: flex;
@@ -48,32 +38,22 @@ footer {
  @media only screen and (min-width: 650px){
    
     form {
+
         margin: auto;
         flex-direction: column;
-        text-align: left;
+        text-align: center;
         width: 50%;
+        height: 150px;
         margin-top: 30px;
         margin-bottom: 10px;
         padding-bottom: 10px;
     }
-    p {
-        margin: auto;
-        flex-direction: column;
-        text-align: center;
-        width: 50%;
-        margin-bottom: 30px;
-    }
+   
     h2 {
         text-align: center;
         margin-left: 0;
     }
-    section {
-        margin-bottom: 50px;
-        width: 50%;
-        margin: auto;
-        flex-direction: column;
-        text-align: center;
-    }
+   
     footer {
         margin-top: 50px;
     }
