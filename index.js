@@ -81,6 +81,7 @@ function correctAnswerValidator(){
 
 //is called to render html for the beginning of the quiz
 function startPage(){
+  //change buttons to input, can still get
  return `
  <body>
     <section class="start-page">

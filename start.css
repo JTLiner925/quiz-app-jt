@@ -57,17 +57,22 @@ button {
     border: solid 2pt #442b1b;
 }
 .answers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     line-height: 1.5%;
+    text-align: center;
 }
 .ans-choice {
     display: block;
     line-height: 1.5%;
-    margin-left: 10px;
+    margin: auto;
+    margin-top: 10px;
     width: 60%;
     max-width: 250px;
     height: 30px;
     font-size: medium;
-    text-align: start;
+    text-align: center;
     word-spacing: 4px;
     letter-spacing: 2px;
 }
@@ -82,13 +87,14 @@ button {
     font-size: medium;
     width: 100%;
     height: 30px;
-    background-color: #8b6840;
+    background-color: #8b6f40;
     border: solid 2pt #442b1b;
     border-radius: 5px;
     align-content: center;
     text-align: center;
     padding-top: 2px;
 }
+
 .explain-results-small {
     font-size: medium;
     width: 100%;
@@ -134,21 +140,24 @@ footer {
     .explain-results-small{
         visibility: hidden;
     }
+    .explain {
+        margin:0;
+    }
     .explain-results-large {
         position: relative;
         display: flex;
         visibility: visible;
-        font-size: large;
-    width: 50%;
-    /* height: 100%; */
+        font-size: 1.2em;
+    width: 100%;
+    max-height: 300px; 
     background-color: #8b684087;
     border: solid 2pt #442b1b;
     border-radius: 5px;
-    align-content: flex-end;
+    /* align-content: flex-end; */
     /* text-align: start; */
-    padding-top: 2px;
+    /* padding-top: 2px; */
     padding: 10px;
-    margin-right: 5%;
+    margin-right: 5%; 
     }
     form {
 
@@ -156,7 +165,7 @@ footer {
         flex-direction: column;
         text-align: start;
         width: 100%;
-        height: 450px;
+        height: 500px;
         /* margin-top: 30px; */
         margin-bottom: 10px;
         padding-bottom: 10px;
@@ -165,28 +174,36 @@ footer {
         font-size: 38px;
     }
     .answers {
-        margin-top: 25px;
+        margin-top: 0;
         display: inline;
+        justify-content: flex-start;
+        
     }
     .ans-choice {
         display: inline;
         line-height: 1.5%;
         margin-left: 10px;
-        margin-top: 15px;
-        width: 100%;
+        margin-right: 10px;
+        margin-bottom: 30px;
+        width: 80%;
+        margin-top: 0;
         max-width: 400px;
         height: 40px;
-        font-size: large;
+        font-size: 1.2em;
         text-align: start;
-        word-spacing: 4px;
-        letter-spacing: 2px;
+        /* word-spacing: 4px;
+        letter-spacing: 2px; */
     }
     .results-form {
         display: flex;
     }
     .result-answer {
+        margin-top: 30px;
         display: flex;
         justify-content: space-around;
+    }
+    .answers {
+        width: 100%;
     }
     .submit {
         height: 40px;
@@ -246,6 +263,7 @@ footer {
         line-height: 1.5%;
         margin-left: 10px;
         margin-top: 15px;
+        margin-bottom: 0;
         height: 50px;
         font-size: x-large;
         text-align: start;
@@ -279,18 +297,21 @@ footer {
        display: flex;
    }
    .result-answer {
+       padding-top: 50px;
        display: flex;
        justify-content: space-around;
    }
    .answers {
        width: 100%;
+       justify-content: flex-start;
+       margin-top: 0;
    }
     .explain-results-large {
         position: relative;
         display: flex;
         visibility: visible;
-        font-size: large;
-    width: 50%;
+        font-size: 1.2em;
+    width: 70%;
     /* height: 100%; */
     background-color: #8b684087;
     border: solid 2pt #442b1b;
@@ -300,6 +321,7 @@ footer {
     padding-top: 2px;
     padding: 10px;
     margin-right: 5%;
+    margin-top: 15px;
     }
     button {
         width: 30%;
