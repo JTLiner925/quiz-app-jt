@@ -1,5 +1,6 @@
 'use strict';
 
+//The store where almost every variable lives.
 const STORE = {
   questions: [
     {
@@ -59,46 +60,62 @@ const STORE = {
   answerUserChose: undefined
 };
 
-//
-let currentPage = 'startPage';
+//helps to keep track of what part of the quiz we're on
+let currentState = 'startPage';
 
+//render function calls gneerateHtml function
 function render(){
 
 }
+
+//it renders the appropriate html based on which event listener was activated
 function generateHtml(page){
 
 }
 
+//calls the store to see if they got the question correct
+//this tells us what to render on the feedbackForm
+function correctAnswerValidator(){
 
+}
 
+//is called to render html for the beginning of the quiz
 function startPage(){
 
 }
+//This listens to the start page for clicks to start the quiz.
 function handleStartPage(){
 
 }
 
+//is called to render html for the questions
 function questionForm(){
 
 }
+//This listens to the question form for clicks to submit an answer.
 function handleQuestionForm(){
 
 }
 
+//is called to render html for the feedback of the question
 function feedbackForm(){
 
 }
+//This listens to the feedback form for clicks to go to next page...question/results
 function handleFeedback(){
 
 }
 
+//is called to render html for the final results of quiz
 function resultsForm(){
 
 }
+//listens to click to restart quiz
 function handleResults(){
 
 }
 
+//function that calls all the listener functions
 function handleQuizApp(){
   render();
   handleStartPage();
@@ -107,4 +124,5 @@ function handleQuizApp(){
   handleResults();
 }
 
+//jQuery object that runs after the page loads
 $(handleQuizApp);
