@@ -214,7 +214,7 @@ function feedbackPage(){
   let scoreSoFar = STORE.score;
   let currentQuestionNumber = STORE.questionNumber;
   let submit = $('.submit');
-  $('.submit').html('NEXT QUESTION');
+  $('.submit').html('NEXT');
   didTheyGetItRight();
   handleFeedbackPage();
   
@@ -248,7 +248,7 @@ function resultsPage(){
         <span id = 'current-score'>Your final score was<br> ${finalScore} out of 5.</span>
     </div>
         
-    <button name="retake-quiz" id="retake-quiz">RETAKE QUIZ</button> 
+    <button name="retake-quiz" id="retake-quiz">RETAKE</button> 
     </form>
     
     </section>
