@@ -44,7 +44,7 @@ const STORE = {
         'Goyim',
         'Sons of Hagar'
       ],
-      correctAnswer: 'Snakes and brood of Vipers! ',
+      correctAnswer: 'Snakes and brood of Vipers!',
       scripture: "The correct answer is 'Snakes and brood of Vipers!'<br> Look up "
     },
     {
@@ -93,17 +93,15 @@ function generateHtml(page){
 function didTheyGetItRight() {
   let answer = STORE['questions'][STORE.questionNumber - 1].correctAnswer;
   if (STORE.gotItRight === true) {
-    return `
-    <label for = 'correct-answer' class = 'correct-answer'>
+    $('.results').append(`<div class="explain-results-large"><label for = 'correct-answer' class = 'correct-answer'>
     <span class = 'correct-answer-text'>Congratulations! You chose the correct answer of "${answer}."</span>
-  </label>`;
+  </label>`);
   }
   else {
-    return `
-     <label for = 'correct-answer' class = 'correct-answer'>
+    $('.results').append(`<div class="explain-results-large"><label for = 'correct-answer' class = 'correct-answer'>
     <span class = 'correct-answer-text'>Sorry, you chose "${STORE.answerUserChose}" but the correct answer was: "${answer}."</span>
   </label>
-  `;
+  `);
   }
 }
 
@@ -149,6 +147,8 @@ function questionPage(){
   </p>
   <form class="question-form">
     <h2 class = 'question-section'>${questionToDisplay}</h2>
+    <div class="results">
+    </div>
     <div class= 'result-answers'>
   <div class = 'answers'>
     <label for = 'option1' class = 'ans-choices'>
@@ -176,7 +176,7 @@ function questionPage(){
 //This listens to the question form for clicks to submit an answer.
 function handleQuestionPage(){
   console.log('`questionPageHandler function` ran');
-  $('main').on('click', '.submit', function(event) {
+  $('main').on('submit', '.question-form', function(event) {
     event.preventDefault();
     console.log('submit answer button clicked');
 
@@ -199,6 +199,7 @@ function handleQuestionPage(){
     } else {
       STORE.gotItRight = false;
     }
+    
     currentPage = 'feedbackPage';
     console.log(`Question number is ${STORE.questionNumber}`);
     return render();
@@ -212,46 +213,17 @@ function feedbackPage(){
   let answerIndexToDisplay = STORE['questions'][STORE.questionNumber - 1].answers;
   let scoreSoFar = STORE.score;
   let currentQuestionNumber = STORE.questionNumber;
-  return `<body>
-  <section>
-  <p class="result-total">
-      Question #: ${currentQuestionNumber} You have answered ${scoreSoFar} correctly!
-  </p>
-  <form class="question-form">
-    <h2 class = 'question-section'>${questionToDisplay}</h2>
-    <div class="explain-results-small explain-results-large">
-    <p class="explain">${didTheyGetItRight()}</p>
-</div>
-    <div class= 'result-answers'>
-  <div class = 'answers'>
-    <label for = 'option1' class = 'ans-choices'>
-      <input class = 'radio-button' type = 'radio' name = 'answer' id = 'option1' value ='0' required>
-      <span class = 'ans-choice'>${answerIndexToDisplay[0]}</span>
-    </label>
-    <label for = 'option2' class = 'ans-choices'>
-      <input class = 'radio-button' type = 'radio' name = 'answer' id = 'option2' value = '1' required>
-      <span class = 'ans-choice'>${answerIndexToDisplay[1]}</span>
-    </label>
-    <label for = 'option3' class = 'ans-choices'>
-      <input class = 'radio-button' type = 'radio' name = 'answer' id = 'option3' value = '2' required>
-      <span class = 'ans-choice'>${answerIndexToDisplay[2]}</span>
-    </label>  
-    <label for = 'option4' class = 'ans-choices'>
-      <input class = 'radio-button' type = 'radio' name = 'answer' id = 'option4' value = '3' required>
-      <span class = 'ans-choice'>${answerIndexToDisplay[3]}</span>
-    </label>
+  let submit = $('.submit');
+  $('.submit').html('NEXT QUESTION');
+  didTheyGetItRight();
+  handleFeedbackPage();
   
-    </div>
-    
-    </div>
-    <button class="next-question">NEXT QUESTION</button>
-  </form>
+ 
   
-</body>`;
 }
 //This listens to the feedback form for clicks to go to next page...question/results
 function handleFeedbackPage(){
-  $('main').on('click', '.next-question', function() {
+  $('.question-form button').on('click', function() {
     event.preventDefault();
     console.log('next question button clicked');
     STORE.questionNumber += 1;
