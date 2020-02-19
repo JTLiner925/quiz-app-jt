@@ -113,13 +113,13 @@ function startPage(){
   //change buttons to input, can still get
   return `<body>
     <section>
-    <form action="">
+    <form class=""action="">
 
         <h2>Do you get the words of Jesus mixed up with other historical figures? <br>Test your knowledge...</h2>
         <h2>You just might be surprised!</h2>
-       
+        <button name="start" id="start">START</button>
     </form>
-    <button name="start" id="start">START</button>
+    
     </section>
 </body>`;
 
@@ -169,7 +169,7 @@ function questionPage(){
     </label>
     </div>
     </div>
-    <button class="submit">Submit</button>
+    <button class="submit">SUBMIT</button>
   </form>
 </body>`;
 }
@@ -271,15 +271,14 @@ function resultsPage(){
   return `<body>
     <section>
     <form action="">
-
+<div id="results-display">
     <h2>The results are in...</h2>
-        <span id = 'current-score'>Your final score was ${finalScore} out of 5.</span>
-    
-      
-      <button id = 'restart-button'>Restart quiz?</button>     
-       
+        <span id = 'current-score'>Your final score was<br> ${finalScore} out of 5.</span>
+    </div>
+        
+    <button name="retake-quiz" id="retake-quiz">RETAKE QUIZ</button> 
     </form>
-    <button name="retake-quiz" id="retake-quiz">RETAKE QUIZ</button>
+    
     </section>
 </body>`;
 }
