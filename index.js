@@ -39,7 +39,7 @@ const STORE = {
     {
       question: 'What did Jesus call the religious leaders of his day?',
       answers: [
-        'Snakes and brood of Vipers! ',
+        'Snakes and brood of Vipers!',
         'Broken mirrors',
         'Goyim',
         'Sons of Hagar'
@@ -76,7 +76,7 @@ function render(){
 }
 
 //it renders the appropriate html based on which event listener was activated
-function generateHtml(page){
+function generateHtml(){
   if (currentPage === 'startPage') {
     return startPage();
   } else if (currentPage === 'questionPage') {
